@@ -11,13 +11,21 @@ Caveat emptor:
 Files in the package:
 
 car_ctl.py -- contains routines for controlling the motors and servos on the car
+
 client.cfg -- config file for the client-side.  This config is used by the computer you are using to remote-control the car.
+
 config -- config file for the server-side.  This config is used by the tcpserver.py file and resides on the Pi
+
 game_controller.py -- routines for initializing and using a hardware game controller.  NOTE: this requires pygame to work
+
 PCA9685.py -- routines for controlling the PWM controller.  This is the only code I kept from the Sunfounder package.
+
 reset -- quick routine to reset the hardware to zero-state.  This stops the motors and centers all the servos
+
 tcpserver.py -- server application that runs on the pi.  listens for valid commands and parses/passes them to car_ctl
+
 testcar.py -- routine to test the various control funcitons.  should be run on the pi
+
 virtual_controller.py -- an on-screen set of joysticks for controlling the car if there is no hardware joystick
 
 To run this code:
