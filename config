@@ -1,0 +1,47 @@
+[network]
+busnum = 1                 ; bus number for i2c on the pi change to
+;			   ; zero for pi 0 or 1
+HOST = 192.168.1.153                  ; ip address to bind the server to
+PORT = 21567               ; port number to open for the socket
+BUFSIZ = 1024              ; buffer size for socket messages
+CONNECTIONS = 10	   ; max # of simultaneous connnections
+TIMEOUT = 2.5
+;
+[servos]
+pwm_frequency = 50         ; (hz) frequency for the pwm 
+max_pwm = 2.55             ; (ms) max servo pwm for sg90
+min_pwm = 0.8              ; (ms) min servo pwm for sg90
+;
+[car]
+;; Settings for the car servos & motors
+max_speed = 100	     ; maximum percent of possible motor speed
+steer_offset = 0     ; offset to compensate for mechanical errors
+max_turn = 45        ; max turn right
+min_turn = -45       ; max turn left
+turn_channel = 0     ; servo channel for turn-control
+;
+;; assign pins for controlling the drive motor directions.  To go
+;; clockwise, set Motor0_A HIGH, and Motor0_B LOW, to go
+;; counter-clockwise, swap to Motor0_A LOW and Motor0_B HIGH.  Pin
+;; numbers are the board-location as opposed to the broadcom chip
+;; location
+Motor0_A = 11  ;; pin11 and pin 12 control Motor0's rotation direction
+Motor0_B = 12  ;; pin12 
+Motor1_A = 13  ;; pin13 and pin 15 control Motor0's rotation direction
+Motor1_B = 15  ;; pin15 NOTE: the OEM code has these backwards if you
+;; build the car according to the design.  The error is hidden by the
+;; fact that they only drive the motors together at the same speed
+M0_pwm_ch = 5  ;; PWM controller channel for Motor0 
+M1_pwm_ch = 4  ;; PWM controller channel for Motor1
+M0_reverse = False   ;; reverses motor 0's direction if needed
+M1_reverse = False   ;; reverses motor 1's direction
+;
+[camera]
+max_elevation = 90   ;; maximum elevation
+min_elevation = -20  ;; minimum elevation
+elevation_offset = 0 ;; calibration offset for mech errors
+max_azimuth = 90     ;; Maximum azimuth angle
+min_azimuth = -90    ;; Minimum azimuth angle
+azimuth_offset = 0   ;; calibraiont offset for mech errors
+az_channel = 14      ;; PWM channel for azimuth servo
+el_channel = 15      ;; PWM channel for elevation servo
