@@ -32,7 +32,7 @@ To run this code:
 
 1. Edit the config and client.cfg files to suit your needs.  Most likely all you will need to edit is the HOST ip address.  If you are using a hardware joystick/game controller that is different from what I have, you may need to edit the client.cfg file to assign the proper axes and buttons to the various functions. 
 
-2. Dump the whole package in a folder on both the remote-control computer and the pi. gftp is my preferred option for pushing files to the pi.  (google is your friend if you don't know how)
+2. Dump the whole package in a folder on both the remote-control computer and the pi. gftp is my preferred option for pushing files to the pi.  (google is your friend if you don't know how)  If you want to separate out the client and server files, put tcpserver.py, car_ctl.py, PCA9685.py, reset, testcar.py and config on the RPi.  For the client put client_app.py, game_controller.py, virtual_controller.py, and client.cfg on the computer you're using to control the car. 
 
 3. Log into the pi via vncviewer or ssh (again, google is your friend)
 
